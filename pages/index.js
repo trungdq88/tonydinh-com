@@ -98,12 +98,27 @@ export default function Home(props) {
           <section>
             <h2>About Me</h2>
             <ul className={styles.list}>
-              <li>👴 28 years old</li>
-              <li>🇻🇳 From Vietnam</li>
-              <li>👨‍💻 Software Developer</li>
+              <li>
+                <span style={{ marginRight: '10px' }}>🧑</span>
+                28 years old
+              </li>
+              <li>
+                <span style={{ marginRight: '10px' }}>🇻🇳</span>
+                From Vietnam
+              </li>
+              <li>
+                <span style={{ marginRight: '10px' }}>👨‍💻</span>
+                Software Developer
+              </li>
 
-              <li>🔨 Full-time Indie Hacker</li>
-              <li>😻 Cats > Dogs</li>
+              <li>
+                <span style={{ marginRight: '10px' }}>🔨</span>
+                Full-time Indie Hacker
+              </li>
+              <li>
+                <span style={{ marginRight: '10px' }}>😻</span>
+                Cats > Dogs
+              </li>
             </ul>
           </section>
           <section>
@@ -111,25 +126,29 @@ export default function Home(props) {
             <ul className={styles.list}>
               <li>
                 <div>
-                  🧰 <a href="https://devutils.app">DevUtils.app</a>
+                  <span style={{ marginRight: '10px' }}>🧰</span>
+                  <a href="https://devutils.app">DevUtils.app</a>
                 </div>
                 <div className={styles.subtitle}>{props.devutils}</div>
               </li>
               <li>
                 <div>
-                  🎩 <a href="https://blackmagic.so">BlackMagic.so</a>
+                  <span style={{ marginRight: '10px' }}>🎩</span>
+                  <a href="https://blackmagic.so">BlackMagic.so</a>
                 </div>
                 <div className={styles.subtitle}>{props.blackmagic}</div>
               </li>
               <li>
                 <div>
-                  💌 <a href="https://news.tonydinh.com">Newsletter</a>
+                  <span style={{ marginRight: '10px' }}>💌</span>
+                  <a href="https://news.tonydinh.com">Newsletter</a>
                 </div>
                 <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
               <li>
                 <div>
-                  🎆 <a href="https://dinhquangtrung.net/">Fun Stuff</a>
+                  <span style={{ marginRight: '10px' }}>🎆</span>
+                  <a href="https://dinhquangtrung.net/">Fun Stuff</a>
                 </div>
                 <div className={styles.subtitle}>Click for surprise</div>
               </li>
@@ -140,23 +159,26 @@ export default function Home(props) {
             <ul className={styles.list}>
               <li>
                 <div>
-                  🐦 <a href="https://twitter.com/tdinh_me">Twitter</a>
+                  <span style={{ marginRight: '10px' }}>🐦</span>
+                  <a href="https://twitter.com/tdinh_me">Twitter</a>
                 </div>
                 <div className={styles.subtitle}>{props.tweets}</div>
               </li>
               <li>
                 <div>
-                  🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
+                  <span style={{ marginRight: '10px' }}>🎥</span>
+                  <a href="https://www.youtube.com/tonydinh">YouTube</a>
                 </div>
                 <div className={styles.subtitle}>{props.youtube}</div>
               </li>
               <li>
-                👨‍💻 <a href="https://github.com/trungdq88">GitHub</a>
+                <span style={{ marginRight: '10px' }}>⌨️</span>
+                <a href="https://github.com/trungdq88">GitHub</a>
                 <div className={styles.subtitle}>Last commit: Today</div>
               </li>
               <li>
                 <div>
-                  💼{' '}
+                  <span style={{ marginRight: '10px' }}>💼</span>
                   <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
                 </div>
                 <div className={styles.subtitle}>I post once a week</div>
@@ -168,7 +190,7 @@ export default function Home(props) {
             <ul className={styles.list}>
               <li>
                 <div>
-                  😺{' '}
+                  <span style={{ marginRight: '10px' }}>😺</span>
                   <a href="https://www.producthunt.com/@trungdq88">
                     Product Hunt
                   </a>
@@ -177,19 +199,21 @@ export default function Home(props) {
               </li>
               <li>
                 <div>
-                  💵 <a href="https://tdinh.gumroad.com/">Gumroad</a>
+                  <span style={{ marginRight: '10px' }}>💵</span>
+                  <a href="https://tdinh.gumroad.com/">Gumroad</a>
                 </div>
                 <div className={styles.subtitle}>Products created: 1</div>
               </li>
               <li>
                 <div>
-                  🖼️ <a href="https://opensea.io/tdinh_me">OpenSea.io</a>
+                  <span style={{ marginRight: '10px' }}>🖼️</span>
+                  <a href="https://opensea.io/tdinh_me">OpenSea.io</a>
                 </div>
                 <div className={styles.subtitle}>Minted: 2 items</div>
               </li>
               <li>
                 <div>
-                  🔨{' '}
+                  <span style={{ marginRight: '10px' }}>🔨</span>
                   <a href="https://www.indiehackers.com/tonidie">
                     Indie Hackers
                   </a>
