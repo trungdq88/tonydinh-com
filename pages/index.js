@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
+import Parser from 'rss-parser';
 
 export default function Home() {
   return (
@@ -158,6 +160,20 @@ export default function Home() {
               </li>
             </ul>
           </section>
+        </div>
+        <div>
+          <iframe
+            src="https://tdinh.substack.com/embed"
+            height={320}
+            style={{
+              width: '100%',
+              maxWidth: '400',
+              border: 'none',
+              background: 'white',
+            }}
+            frameBorder={0}
+            scrolling="no"
+          />
         </div>
       </main>
     </div>
