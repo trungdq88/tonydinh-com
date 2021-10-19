@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
-import Parser from 'rss-parser';
+import RevueForm from '../components/RevueForm.js';
 
 export default function Home() {
   return (
@@ -161,19 +161,9 @@ export default function Home() {
             </ul>
           </section>
         </div>
-        <div>
-          <iframe
-            src="https://tdinh.substack.com/embed"
-            height={320}
-            style={{
-              width: '100%',
-              maxWidth: '400',
-              border: 'none',
-              background: 'white',
-            }}
-            frameBorder={0}
-            scrolling="no"
-          />
+
+        <div style={{ margin: '40px 0', textAlign: 'center' }}>
+          <RevueForm />
         </div>
       </main>
     </div>
