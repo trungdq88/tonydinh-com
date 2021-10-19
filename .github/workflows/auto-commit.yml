@@ -4,8 +4,11 @@ on:
     # * is a special character in YAML so you have to quote this string
     - cron:  '30 9 * * *'
 
-steps:
-  - name: Trigger deploy
-    id: step_one
-    run: |
-      curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/3e24f8c6-5bfd-418f-a96a-faf6709e87b0"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+  steps:
+    - name: Trigger deploy
+      id: step_one
+      run: |
+        curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/3e24f8c6-5bfd-418f-a96a-faf6709e87b0"
