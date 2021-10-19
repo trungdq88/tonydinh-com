@@ -2,7 +2,7 @@ export default function RevueForm() {
   return (
     <div className="subscribe-email" id="revue-embed">
       <div className="color-primary">
-        Get notified when I release a new stuff! 👇
+        Get notified when I release new stuff! 👇
       </div>
       <form
         className="subscription-form"
