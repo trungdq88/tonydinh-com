@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
@@ -86,9 +86,79 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Hi, I'm <a href="https://tonydinh.com">Tony Dinh</a> 👋
-        </h1>
+        <section className={styles.intro}>
+          <img className={styles.avatar} src="/tonydinh.png" />
+          <h1 className={styles.title}>Tony Dinh</h1>
+          <p>Welcome to my corner of the internet!</p>
+        </section>
+        <div className={styles.sections}>
+          <section>
+            <h2>About Me</h2>
+            <ul className={styles.list}>
+              <li>👴 28 years old</li>
+              <li>🇻🇳 From Vietnam</li>
+              <li>👨‍💻 Software Developer</li>
+
+              <li>🔨 Full-time Indie Hacker</li>
+              <li>😻 Cats > Dogs</li>
+            </ul>
+          </section>
+          <section>
+            <h2>My Products</h2>
+            <ul className={styles.list}>
+              <li>
+                🧰 <a href="https://devutils.app">DevUtils.app</a>
+              </li>
+              <li>
+                🎩 <a href="https://blackmagic.so">BlackMagic.so</a>
+              </li>
+              <li>
+                🎆 <a href="https://dinhquangtrung.net/">Fun Stuff</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Social Media</h2>
+            <ul className={styles.list}>
+              <li>
+                🐦 <a href="https://twitter.com/tdinh_me">Twitter</a>
+              </li>
+              <li>
+                💌 <a href="https://news.tonydinh.com">Newsletter</a>
+              </li>
+              <li>
+                💼 <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
+              </li>
+              <li>
+                🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h2>Other Places</h2>
+            <ul className={styles.list}>
+              <li>
+                👨‍💻 <a href="https://github.com/trungdq88">GitHub</a>
+              </li>
+              <li>
+                💵 <a href="https://tdinh.gumroad.com/">Gumroad</a>
+              </li>
+              <li>
+                🖼️ <a href="https://opensea.io/tdinh_me">OpenSea.io</a>
+              </li>
+              <li>
+                🔨{' '}
+                <a href="https://www.indiehackers.com/tonidie">Indie Hackers</a>
+              </li>
+              <li>
+                😺{' '}
+                <a href="https://www.producthunt.com/@trungdq88">
+                  Product Hunt
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
       </main>
     </div>
   );
