@@ -194,7 +194,7 @@ export default function Home(props) {
                     Indie Hackers
                   </a>
                 </div>
-                <div className={styles.subtitle}>Mostly lurking</div>
+                <div className={styles.subtitle}>Mostly lurking 😅</div>
               </li>
             </ul>
           </section>
