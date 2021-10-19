@@ -56,7 +56,7 @@
   list-style: none;
   padding: 0;
   li {
-    margin: 4px 0;
+    margin: 10px 0;
   }
 }
 
@@ -151,5 +151,19 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+.subtitle {
+  color: #8d8d8d;
+  font-size: 12px;
+  margin: 3px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .subtitle {
+    color: #ccc;
+    font-size: 12px;
+    margin: 5px 0;
   }
 }

@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import RevueForm from '../components/RevueForm.js';
+import Parser from 'rss-parser';
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -109,16 +110,28 @@ export default function Home() {
             <h2>My Products</h2>
             <ul className={styles.list}>
               <li>
-                🧰 <a href="https://devutils.app">DevUtils.app</a>
+                <div>
+                  🧰 <a href="https://devutils.app">DevUtils.app</a>
+                </div>
+                <div className={styles.subtitle}>{props.devutils}</div>
               </li>
               <li>
-                🎩 <a href="https://blackmagic.so">BlackMagic.so</a>
+                <div>
+                  🎩 <a href="https://blackmagic.so">BlackMagic.so</a>
+                </div>
+                <div className={styles.subtitle}>{props.blackmagic}</div>
               </li>
               <li>
-                💌 <a href="https://news.tonydinh.com">Newsletter</a>
+                <div>
+                  💌 <a href="https://news.tonydinh.com">Newsletter</a>
+                </div>
+                <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
               <li>
-                🎆 <a href="https://dinhquangtrung.net/">Fun Stuff</a>
+                <div>
+                  🎆 <a href="https://dinhquangtrung.net/">Fun Stuff</a>
+                </div>
+                <div className={styles.subtitle}>Click for surprise</div>
               </li>
             </ul>
           </section>
@@ -126,16 +139,27 @@ export default function Home() {
             <h2>Social Media</h2>
             <ul className={styles.list}>
               <li>
-                🐦 <a href="https://twitter.com/tdinh_me">Twitter</a>
+                <div>
+                  🐦 <a href="https://twitter.com/tdinh_me">Twitter</a>
+                </div>
+                <div className={styles.subtitle}>{props.tweets}</div>
               </li>
               <li>
-                🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
+                <div>
+                  🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
+                </div>
+                <div className={styles.subtitle}>{props.youtube}</div>
               </li>
               <li>
                 👨‍💻 <a href="https://github.com/trungdq88">GitHub</a>
+                <div className={styles.subtitle}>Last commit: Today</div>
               </li>
               <li>
-                💼 <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
+                <div>
+                  💼{' '}
+                  <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
+                </div>
+                <div className={styles.subtitle}>I post once a week</div>
               </li>
             </ul>
           </section>
@@ -143,20 +167,34 @@ export default function Home() {
             <h2>Other Places</h2>
             <ul className={styles.list}>
               <li>
-                😺{' '}
-                <a href="https://www.producthunt.com/@trungdq88">
-                  Product Hunt
-                </a>
+                <div>
+                  😺{' '}
+                  <a href="https://www.producthunt.com/@trungdq88">
+                    Product Hunt
+                  </a>
+                </div>
+                <div className={styles.subtitle}>Products launched: 5</div>
               </li>
               <li>
-                💵 <a href="https://tdinh.gumroad.com/">Gumroad</a>
+                <div>
+                  💵 <a href="https://tdinh.gumroad.com/">Gumroad</a>
+                </div>
+                <div className={styles.subtitle}>Products created: 1</div>
               </li>
               <li>
-                🖼️ <a href="https://opensea.io/tdinh_me">OpenSea.io</a>
+                <div>
+                  🖼️ <a href="https://opensea.io/tdinh_me">OpenSea.io</a>
+                </div>
+                <div className={styles.subtitle}>Minted: 2 items</div>
               </li>
               <li>
-                🔨{' '}
-                <a href="https://www.indiehackers.com/tonidie">Indie Hackers</a>
+                <div>
+                  🔨{' '}
+                  <a href="https://www.indiehackers.com/tonidie">
+                    Indie Hackers
+                  </a>
+                </div>
+                <div className={styles.subtitle}>I post here sometimes</div>
               </li>
             </ul>
           </section>
@@ -168,4 +206,79 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const parser = new Parser();
+  const [
+    devutils,
+    blackmagic,
+    newsletter,
+    youtube,
+    tweets,
+  ] = await Promise.all([
+    parser.parseURL('https://devutils.app/changelog.rss'),
+    parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
+    parser.parseURL('https://newsletter.tdinh.me/?format=rss'),
+    parser.parseURL(
+      'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
+    ),
+    fetch(
+      'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
+    ).then((r) => r.json()),
+  ]);
+
+  return {
+    props: {
+      devutils: `Last version: ${fromNow(new Date(devutils.items[0].isoDate))}`,
+      blackmagic: `Last update: ${fromNow(
+        new Date(blackmagic.items[0].isoDate)
+      )}`,
+      newsletter: `Last issue: ${fromNow(
+        new Date(newsletter.items[0].isoDate)
+      )}`,
+      youtube: `Last video: ${fromNow(new Date(youtube.items[0].isoDate))}`,
+      tweets: `${tweets.count} tweets last 48hrs`,
+    },
+  };
+}
+
+function fromNow(
+  date,
+  nowDate = Date.now(),
+  rft = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' })
+) {
+  const SECOND = 1000;
+  const MINUTE = 60 * SECOND;
+  const HOUR = 60 * MINUTE;
+  const DAY = 24 * HOUR;
+  const WEEK = 7 * DAY;
+  const MONTH = 30 * DAY;
+  const YEAR = 365 * DAY;
+  const intervals = [
+    { ge: YEAR, divisor: YEAR, unit: 'year' },
+    { ge: MONTH, divisor: MONTH, unit: 'month' },
+    { ge: WEEK, divisor: WEEK, unit: 'week' },
+    { ge: DAY, divisor: DAY, unit: 'day' },
+    { ge: HOUR, divisor: HOUR, unit: 'hour' },
+    { ge: MINUTE, divisor: MINUTE, unit: 'minute' },
+    { ge: 30 * SECOND, divisor: SECOND, unit: 'seconds' },
+    { ge: 0, divisor: 1, text: 'just now' },
+  ];
+  const now =
+    typeof nowDate === 'object'
+      ? nowDate.getTime()
+      : new Date(nowDate).getTime();
+  const diff =
+    now - (typeof date === 'object' ? date : new Date(date)).getTime();
+  const diffAbs = Math.abs(diff);
+  for (const interval of intervals) {
+    if (diffAbs >= interval.ge) {
+      const x = Math.round(Math.abs(diff) / interval.divisor);
+      const isFuture = diff < 0;
+      return interval.unit
+        ? rft.format(isFuture ? x : -x, interval.unit)
+        : interval.text;
+    }
+  }
 }
