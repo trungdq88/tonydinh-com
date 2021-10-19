@@ -115,6 +115,9 @@ export default function Home() {
                 🎩 <a href="https://blackmagic.so">BlackMagic.so</a>
               </li>
               <li>
+                💌 <a href="https://news.tonydinh.com">Newsletter</a>
+              </li>
+              <li>
                 🎆 <a href="https://dinhquangtrung.net/">Fun Stuff</a>
               </li>
             </ul>
@@ -126,13 +129,13 @@ export default function Home() {
                 🐦 <a href="https://twitter.com/tdinh_me">Twitter</a>
               </li>
               <li>
-                💌 <a href="https://news.tonydinh.com">Newsletter</a>
+                🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
+              </li>
+              <li>
+                👨‍💻 <a href="https://github.com/trungdq88">GitHub</a>
               </li>
               <li>
                 💼 <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
-              </li>
-              <li>
-                🎥 <a href="https://www.youtube.com/tonydinh">YouTube</a>
               </li>
             </ul>
           </section>
@@ -140,7 +143,10 @@ export default function Home() {
             <h2>Other Places</h2>
             <ul className={styles.list}>
               <li>
-                👨‍💻 <a href="https://github.com/trungdq88">GitHub</a>
+                😺{' '}
+                <a href="https://www.producthunt.com/@trungdq88">
+                  Product Hunt
+                </a>
               </li>
               <li>
                 💵 <a href="https://tdinh.gumroad.com/">Gumroad</a>
@@ -151,12 +157,6 @@ export default function Home() {
               <li>
                 🔨{' '}
                 <a href="https://www.indiehackers.com/tonidie">Indie Hackers</a>
-              </li>
-              <li>
-                😺{' '}
-                <a href="https://www.producthunt.com/@trungdq88">
-                  Product Hunt
-                </a>
               </li>
             </ul>
           </section>
