@@ -220,6 +220,13 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>Mostly lurking 😅</div>
               </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>💰</span>
+                  <a href="https://paypal.me/trungdq88">PayPal</a>
+                </div>
+                <div className={styles.subtitle}>Thanks for you tip!</div>
+              </li>
             </ul>
           </section>
         </div>
