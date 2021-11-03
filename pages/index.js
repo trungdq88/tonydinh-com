@@ -200,7 +200,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💵</span>
-                  <a href="https://tdinh.gumroad.com/">Gumroad</a>
+                  <a href="https://tonydinh.gumroad.com/">Gumroad</a>
                 </div>
                 <div className={styles.subtitle}>Products created: 1</div>
               </li>
