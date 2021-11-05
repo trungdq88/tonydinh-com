@@ -141,7 +141,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💌</span>
-                  <a href="https://news.tonydinh.com">Newsletter</a>
+                  <a href="https://newsletter.tonydinh.com">Newsletter</a>
                 </div>
                 <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
@@ -250,7 +250,7 @@ export async function getStaticProps() {
   ] = await Promise.all([
     parser.parseURL('https://devutils.app/changelog.rss'),
     parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
-    parser.parseURL('https://newsletter.tdinh.me/?format=rss'),
+    parser.parseURL('https://newsletter.tonydinh.com/?format=rss'),
     parser.parseURL(
       'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
     ),
