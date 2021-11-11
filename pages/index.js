@@ -304,7 +304,8 @@ export default function Home(props) {
               </div>
               <div className={styles['issue-title']}>{issue.title}</div>
               <div className={styles['issue-snippet']}>
-                {issue.contentSnippet}
+                {(issue.contentSnippet || '').substring(0, 100)}
+                {(issue.contentSnippet || '').length > 100 ? '...' : ''}
               </div>
             </a>
           ))}

@@ -163,8 +163,10 @@
 .issue-container {
   max-width: 600px;
   margin: 0 auto;
+  width: 100%;
 
   .issue-line {
+    width: 100%;
     display: block;
     margin: 20px 0;
     border-bottom: 0;
@@ -206,7 +208,6 @@
     .issue-snippet {
       font-size: 14px;
       color: #888;
-      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
