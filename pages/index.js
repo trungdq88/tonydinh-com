@@ -1,10 +1,18 @@
 import { useEffect, useState } from 'react';
+import moment from 'moment';
+import ReactTooltip from 'react-tooltip';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import RevueForm from '../components/RevueForm.js';
 import Parser from 'rss-parser';
 
 export default function Home(props) {
+  const [showTip, setShowTip] = useState(false);
+
+  useEffect(() => {
+    setShowTip(true);
+  }, []);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -122,7 +130,7 @@ export default function Home(props) {
             </ul>
           </section>
           <section>
-            <h2>My Products</h2>
+            <h2>Products I Made</h2>
             <ul className={styles.list}>
               <li>
                 <div>
@@ -229,12 +237,91 @@ export default function Home(props) {
               </li>
             </ul>
           </section>
+          <section>
+            <h2 data-tip="I use and love the products so much I registered to become their affiliate. The links below are affiliate links.">
+              Products I Love
+            </h2>
+            <ul className={styles.list}>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>📜</span>
+                  <a href="https://www.descript.com/?lmref=XX-h3w">Descript</a>
+                </div>
+                <div className={styles.subtitle}>For my YouTube videos</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>💅</span>
+                  <a href="https://cruip.com/?ref=tony">Cruip</a>
+                </div>
+                <div className={styles.subtitle}>Tailwind CSS templates</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>💻</span>
+                  <a href="https://go.setapp.com/stp307?refAppID=445">Setapp</a>
+                </div>
+                <div className={styles.subtitle}>200+ premium macOS apps</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>💬</span>
+                  <a href="https://testimonial.to/?via=tony-dinh">
+                    Testimonial
+                  </a>
+                </div>
+                <div className={styles.subtitle}>For my apps' testimonials</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>⏳</span>
+                  <a href="https://rize.io/tonydinh">Rize</a>
+                </div>
+                <div className={styles.subtitle}>For time tracking</div>
+              </li>
+            </ul>
+          </section>
         </div>
 
         <div style={{ margin: '40px 0', textAlign: 'center' }}>
           <RevueForm />
         </div>
+
+        <h2>Latest Updates 👇</h2>
+        <div className={styles['issue-container']}>
+          {props.latest.map((issue, i) => (
+            <a key={i} href={issue.link} className={styles['issue-line']}>
+              <div className={styles['issue-header']}>
+                <div
+                  style={{ backgroundColor: issue.color }}
+                  className={styles['issue-source']}
+                >
+                  {issue.source}
+                </div>
+                <div className={styles['issue-date']}>
+                  {moment(issue.isoDate).fromNow()}
+                </div>
+              </div>
+              <div className={styles['issue-title']}>{issue.title}</div>
+              <div className={styles['issue-snippet']}>
+                {issue.contentSnippet}
+              </div>
+            </a>
+          ))}
+        </div>
       </main>
+
+      {showTip ? (
+        <ReactTooltip
+          multiline={true}
+          overridePosition={({ left, top }, _e, _t, node) => {
+            return {
+              top,
+              left: typeof node === 'string' ? left : Math.max(left, 0),
+            };
+          }}
+        />
+      ) : null}
     </div>
   );
 }
@@ -270,6 +357,30 @@ export async function getStaticProps() {
       )}`,
       youtube: `Last video: ${fromNow(new Date(youtube.items[0].isoDate))}`,
       tweets: `${tweets.count} tweets last 48hrs`,
+      latest: [
+        ...devutils.items.map((item) => ({
+          ...item,
+          source: 'DevUtils Product Updates',
+          color: '#5ba533',
+        })),
+        ...blackmagic.items.map((item) => ({
+          ...item,
+          source: `Black Magic Product Updates`,
+          color: '#333333',
+        })),
+        ...newsletter.items.map((item) => ({
+          ...item,
+          source: `Tony Dinh's Newsletter`,
+          color: '#5383ec',
+        })),
+        ...youtube.items.map((item) => ({
+          ...item,
+          source: `Tony Dinh's Youtube Channel`,
+          color: '#ea3323',
+        })),
+      ].sort(
+        (a, b) => new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime()
+      ),
     },
   };
 }

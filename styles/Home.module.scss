@@ -160,10 +160,76 @@
   margin: 3px 0;
 }
 
+.issue-container {
+  max-width: 600px;
+  margin: 0 auto;
+
+  .issue-line {
+    display: block;
+    margin: 20px 0;
+    border-bottom: 0;
+    padding: 10px;
+    border-radius: 10px;
+
+    &:hover {
+      background: #f7f7f7;
+    }
+
+    .issue-source {
+      background: #4994ec;
+      color: white;
+      padding: 2px 8px;
+      display: inline-block;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .issue-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .issue-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .issue-date {
+      font-size: 12px;
+      font-weight: bold;
+      color: #888;
+    }
+
+    .issue-snippet {
+      font-size: 14px;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+
 @media (prefers-color-scheme: dark) {
   .subtitle {
     color: #ccc;
     font-size: 12px;
     margin: 5px 0;
+  }
+
+  .issue-container {
+    .issue-line {
+      &:hover {
+        background: #222222;
+      }
+
+      .issue-snippet {
+        color: #aaa;
+      }
+    }
   }
 }
