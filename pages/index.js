@@ -233,7 +233,7 @@ export default function Home(props) {
                   <span style={{ marginRight: '10px' }}>💰</span>
                   <a href="https://paypal.me/trungdq88">PayPal</a>
                 </div>
-                <div className={styles.subtitle}>Thanks for you tip!</div>
+                <div className={styles.subtitle}>Thanks for your tip!</div>
               </li>
             </ul>
           </section>
