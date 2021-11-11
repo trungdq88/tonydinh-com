@@ -365,7 +365,7 @@ export async function getStaticProps() {
         })),
         ...blackmagic.items.map((item) => ({
           ...item,
-          source: `Black Magic Product Updates`,
+          source: `BlackMagic.so Product Updates`,
           color: '#333333',
         })),
         ...newsletter.items.map((item) => ({
