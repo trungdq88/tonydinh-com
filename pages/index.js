@@ -284,7 +284,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>⏳</span>
-                  <a href="https://rize.io/tonydinh">Rize</a>
+                  <a href="https://rize.io/tonydinh?lmref=HDZf1g">Rize</a>
                 </div>
                 <div className={styles.subtitle}>For time tracking</div>
               </li>
