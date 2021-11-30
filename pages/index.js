@@ -157,7 +157,7 @@ export default function Home(props) {
                 <div>
                   <span style={{ marginRight: '10px' }}>✏️</span>
                   <a href="https://tdinh.notion.site/Tony-s-Public-Notes-d1db498a88a9454abcc014fdd7a73f0c">
-                    Notes
+                    Public Notes
                   </a>
                 </div>
                 <div className={styles.subtitle}>My notes and tips</div>
