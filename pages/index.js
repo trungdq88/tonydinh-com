@@ -163,13 +163,6 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>Notes, tips, and FAQs</div>
               </li>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>🎆</span>
-                  <a href="https://dinhquangtrung.net/">Fun Stuff</a>
-                </div>
-                <div className={styles.subtitle}>Click for surprise</div>
-              </li>
             </ul>
           </section>
           <section>
@@ -203,6 +196,13 @@ export default function Home(props) {
                 <span style={{ marginRight: '10px' }}>⌨️</span>
                 <a href="https://github.com/trungdq88">GitHub</a>
                 <div className={styles.subtitle}>Last commit: Today</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>🎆</span>
+                  <a href="https://dinhquangtrung.net/">Fun Stuff</a>
+                </div>
+                <div className={styles.subtitle}>Click for surprise</div>
               </li>
             </ul>
           </section>
