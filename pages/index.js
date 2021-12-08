@@ -130,7 +130,7 @@ export default function Home(props) {
             </ul>
           </section>
           <section>
-            <h2>Products I Made</h2>
+            <h2>My Products</h2>
             <ul className={styles.list}>
               <li>
                 <div>
@@ -146,6 +146,9 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>{props.blackmagic}</div>
               </li>
+            </ul>
+            <h2>Writings</h2>
+            <ul className={styles.list}>
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💌</span>
@@ -160,7 +163,7 @@ export default function Home(props) {
                     Public Notes
                   </a>
                 </div>
-                <div className={styles.subtitle}>My notes and tips</div>
+                <div className={styles.subtitle}>Notes, tips, and FAQs</div>
               </li>
               <li>
                 <div>
@@ -189,16 +192,19 @@ export default function Home(props) {
                 <div className={styles.subtitle}>{props.youtube}</div>
               </li>
               <li>
-                <span style={{ marginRight: '10px' }}>⌨️</span>
-                <a href="https://github.com/trungdq88">GitHub</a>
-                <div className={styles.subtitle}>Last commit: Today</div>
-              </li>
-              <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💼</span>
                   <a href="https://www.linkedin.com/in/tdinh-me/">LinkedIn</a>
                 </div>
                 <div className={styles.subtitle}>I post once a week</div>
+              </li>
+            </ul>
+            <h2>Code</h2>
+            <ul className={styles.list}>
+              <li>
+                <span style={{ marginRight: '10px' }}>⌨️</span>
+                <a href="https://github.com/trungdq88">GitHub</a>
+                <div className={styles.subtitle}>Last commit: Today</div>
               </li>
             </ul>
           </section>
@@ -243,50 +249,6 @@ export default function Home(props) {
                   <a href="https://paypal.me/trungdq88">PayPal</a>
                 </div>
                 <div className={styles.subtitle}>Thanks for your tip!</div>
-              </li>
-            </ul>
-          </section>
-          <section>
-            <h2 data-tip="I use and love the products so much I registered to become their affiliate. The links below are affiliate links.">
-              Products I Love
-            </h2>
-            <ul className={styles.list}>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>📜</span>
-                  <a href="https://www.descript.com/?lmref=XX-h3w">Descript</a>
-                </div>
-                <div className={styles.subtitle}>For my YouTube videos</div>
-              </li>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>💅</span>
-                  <a href="https://cruip.com/?ref=tony">Cruip</a>
-                </div>
-                <div className={styles.subtitle}>Tailwind CSS templates</div>
-              </li>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>💻</span>
-                  <a href="https://go.setapp.com/stp307?refAppID=445">Setapp</a>
-                </div>
-                <div className={styles.subtitle}>200+ premium macOS apps</div>
-              </li>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>💬</span>
-                  <a href="https://testimonial.to/?via=tony-dinh">
-                    Testimonial
-                  </a>
-                </div>
-                <div className={styles.subtitle}>For my apps' testimonials</div>
-              </li>
-              <li>
-                <div>
-                  <span style={{ marginRight: '10px' }}>⏳</span>
-                  <a href="https://rize.io/tonydinh?lmref=HDZf1g">Rize</a>
-                </div>
-                <div className={styles.subtitle}>For time tracking</div>
               </li>
             </ul>
           </section>
