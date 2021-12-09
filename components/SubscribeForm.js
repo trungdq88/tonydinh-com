@@ -56,10 +56,32 @@ export default function SubscribeForm() {
       {message ? <div className="message">{message}</div> : null}
       <style jsx>
         {`
-          input,
+          input {
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            height: 100%;
+            font-size: 16px;
+            border-radius: 4px;
+          }
+
           button {
-            padding: 5px;
-            margin: 2px;
+            border: 0;
+            background: #2196f3;
+            padding-right: 10px;
+            color: white;
+            border-radius: 7px;
+            appearance: none;
+            font-weight: 600;
+            font-size: 13px;
+            height: 33px;
+            margin: 0 0 0 10px;
+            display: inline-block;
+            padding-left: 10px;
+            padding-right: 10px;
+          }
+
+          button:disabled {
+            background: #888888;
           }
 
           .title {
