@@ -3,7 +3,7 @@ import moment from 'moment';
 import ReactTooltip from 'react-tooltip';
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
-import RevueForm from '../components/RevueForm.js';
+import SubscribeForm from '../components/SubscribeForm.js';
 import Parser from 'rss-parser';
 
 export default function Home(props) {
@@ -253,7 +253,7 @@ export default function Home(props) {
         </div>
 
         <div style={{ margin: '40px 0', textAlign: 'center' }}>
-          <RevueForm />
+          <SubscribeForm />
         </div>
 
         <h2>Latest Updates 👇</h2>
