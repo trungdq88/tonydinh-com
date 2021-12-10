@@ -36,7 +36,7 @@ export default function SubscribeForm() {
   return (
     <div className="container">
       <div className="title">Get notified when I release new stuff! 👇</div>
-      <div>
+      <div className="form">
         <input
           disabled={loading}
           type="email"
@@ -68,16 +68,21 @@ export default function SubscribeForm() {
             border-radius: 7px;
             appearance: none;
             font-weight: 600;
-            font-size: 13px;
-            height: 33px;
-            margin: 0 0 0 10px;
+            font-size: 14px;
             display: inline-block;
             padding-left: 10px;
             padding-right: 10px;
           }
 
+          .form {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 10px;
+          }
+
           button:disabled {
-            background: #888888;
+            opacity: 0.7;
           }
 
           .title {
