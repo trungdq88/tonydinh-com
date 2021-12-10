@@ -16,11 +16,7 @@ export default function SubscribeForm() {
         body: JSON.stringify({ email }),
       });
       setMessage(
-        <span>
-          🎉 Done! Check your inbox for a confirmation email!
-          <br />
-          (Check Spam folder too!)
-        </span>
+        <span>🎉 Done! Check your inbox for a confirmation email!</span>
       );
     } catch (e) {
       setMessage(
