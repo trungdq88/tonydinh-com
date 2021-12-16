@@ -235,7 +235,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>🔨</span>
-                  <a href="https://www.indiehackers.com/tonidie">
+                  <a href="https://www.indiehackers.com/tonydinh">
                     Indie Hackers
                   </a>
                 </div>
