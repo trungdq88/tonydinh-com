@@ -5,7 +5,17 @@ const isValid = (email) => email && email.indexOf('@') > -1;
 export default function SubscribeForm() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState('I write once a month ❤️');
+  const [message, setMessage] = useState(
+    <div>
+      I write once a month ❤️{' '}
+      <a
+        href="https://newsletter.tonydinh.com/?utm_source=embed"
+        target="_blank"
+      >
+        (See previous issues)
+      </a>
+    </div>
+  );
 
   const submit = async () => {
     setLoading(true);
