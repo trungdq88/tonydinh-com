@@ -102,7 +102,7 @@ export default function Home(props) {
           <h1 className={styles.title}>Tony Dinh</h1>
           <p>Welcome to my corner of the internet!</p>
         </section>
-        <div>
+        <div style={{ marginBottom: 30 }}>
           {[
             {
               link: "https://devutils.app",
