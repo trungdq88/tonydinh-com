@@ -214,8 +214,33 @@
   }
 }
 
+.bio_link {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  width: 100%;
+  border-bottom: 0;
+  margin: 10px 0;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  background: #eee;
+  &:hover {
+    background: #ddd;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
+
+  .bio_link {
+    background: #333;
+    &:hover {
+      background: #444;
+    }
+  }
+
   .subtitle {
     color: #ccc;
     font-size: 12px;
