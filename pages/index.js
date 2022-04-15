@@ -94,6 +94,13 @@ export default function Home(props) {
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
         <meta name="theme-color" content="#ffffff" />
+        <script
+          defer
+          type="text/javascript"
+          src="https://api.pirsch.io/pirsch.js"
+          id="pirschjs"
+          data-code="yojqyHBKGLOMJXGFnwWwP3IIWL7E8Ohv"
+        ></script>
       </Head>
 
       <main className={styles.main}>
