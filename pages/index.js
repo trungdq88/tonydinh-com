@@ -115,7 +115,8 @@ export default function Home(props) {
               link: 'https://devutils.app',
               title: (
                 <span>
-                  <span style={{ marginRight: 10 }}>🧰</span> My macOS app
+                  <span style={{ marginRight: 10 }}>🧰</span> Developer Toolbox
+                  (macOS app)
                 </span>
               ),
             },
@@ -123,7 +124,17 @@ export default function Home(props) {
               link: 'https://blackmagic.so',
               title: (
                 <span>
-                  <span style={{ marginRight: 10 }}>✨</span> My Twitter app
+                  <span style={{ marginRight: 10 }}>✨</span> Twitter Magic
+                  (SaaS)
+                </span>
+              ),
+            },
+            {
+              link: 'https://xnapper.com',
+              title: (
+                <span>
+                  <span style={{ marginRight: 10 }}>📸</span> Beautiful
+                  screenshots (macOS app)
                 </span>
               ),
             },
@@ -202,6 +213,13 @@ export default function Home(props) {
                   <a href="https://blackmagic.so">BlackMagic.so</a>
                 </div>
                 <div className={styles.subtitle}>{props.blackmagic}</div>
+              </li>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>📸</span>
+                  <a href="https://xnapper.com">Xnapper</a>
+                </div>
+                <div className={styles.subtitle}>Now beta testing!</div>
               </li>
             </ul>
             <h2>Code</h2>
