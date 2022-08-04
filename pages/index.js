@@ -148,7 +148,7 @@ export default function Home(props) {
               ),
             },
             {
-              link: 'https://newsletter.tonydinh.com',
+              link: 'https://news.tonydinh.com',
               title: (
                 <span>
                   <span style={{ marginRight: 10 }}>💌</span> Indie Hacking
@@ -284,7 +284,7 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>💌</span>
-                  <a href="https://newsletter.tonydinh.com">Newsletter</a>
+                  <a href="https://news.tonydinh.com">Newsletter</a>
                 </div>
                 <div className={styles.subtitle}>{props.newsletter}</div>
               </li>
@@ -401,23 +401,19 @@ export default function Home(props) {
 
 export async function getStaticProps() {
   const parser = new Parser();
-  const [
-    devutils,
-    blackmagic,
-    newsletter,
-    youtube,
-    tweets,
-  ] = await Promise.all([
-    parser.parseURL('https://devutils.app/changelog.rss'),
-    parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
-    parser.parseURL('https://newsletter.tonydinh.com/?format=rss'),
-    parser.parseURL(
-      'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
-    ),
-    fetch(
-      'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
-    ).then((r) => r.json()),
-  ]);
+  const [devutils, blackmagic, newsletter, youtube, tweets] = await Promise.all(
+    [
+      parser.parseURL('https://devutils.app/changelog.rss'),
+      parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
+      parser.parseURL('https://news.tonydinh.com/feed'),
+      parser.parseURL(
+        'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
+      ),
+      fetch(
+        'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
+      ).then((r) => r.json()),
+    ]
+  );
 
   return {
     props: {
