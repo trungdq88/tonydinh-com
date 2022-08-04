@@ -8,10 +8,7 @@ export default function SubscribeForm() {
   const [message, setMessage] = useState(
     <div>
       I write once a month ❤️{' '}
-      <a
-        href="https://newsletter.tonydinh.com/?utm_source=embed"
-        target="_blank"
-      >
+      <a href="https://news.tonydinh.com/?utm_source=embed" target="_blank">
         (See previous issues)
       </a>
     </div>
@@ -32,8 +29,8 @@ export default function SubscribeForm() {
       setMessage(
         <span>
           Something went wrong, please try again or subscribe directly from{' '}
-          <a target="_blank" href="https://newsletter.tonydinh.com">
-            newsletter.tonydinh.com
+          <a target="_blank" href="https://news.tonydinh.com">
+            news.tonydinh.com
           </a>
           . Sorry! 😢
         </span>
