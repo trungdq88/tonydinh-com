@@ -8,7 +8,7 @@ export default function SubscribeForm() {
   const [message, setMessage] = useState(
     <div>
       I write once a month ❤️{' '}
-      <a href="https://news.tonydinh.com/?utm_source=embed" target="_blank">
+      <a href="https://news.tonydinh.com/archive" target="_blank">
         (See previous issues)
       </a>
     </div>
