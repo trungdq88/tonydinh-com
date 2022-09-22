@@ -112,6 +112,15 @@ export default function Home(props) {
         <div style={{ marginBottom: 30 }}>
           {[
             {
+              link: 'https://news.tonydinh.com',
+              title: (
+                <span>
+                  <span style={{ marginRight: 10 }}>💌</span>
+                  Monthly Newsletter (My Story)
+                </span>
+              ),
+            },
+            {
               link: 'https://devutils.app',
               title: (
                 <span>
@@ -124,8 +133,8 @@ export default function Home(props) {
               link: 'https://blackmagic.so',
               title: (
                 <span>
-                  <span style={{ marginRight: 10 }}>✨</span> Twitter Magic
-                  (SaaS)
+                  <span style={{ marginRight: 10 }}>✨</span> Black Magic
+                  (Twitter SaaS)
                 </span>
               ),
             },
@@ -144,15 +153,6 @@ export default function Home(props) {
                 <span>
                   <span style={{ marginRight: 10 }}>✏️</span> Micro-blog (FAQs,
                   Notes)
-                </span>
-              ),
-            },
-            {
-              link: 'https://news.tonydinh.com',
-              title: (
-                <span>
-                  <span style={{ marginRight: 10 }}>💌</span> Indie Hacking
-                  Newsletter (Monthly)
                 </span>
               ),
             },
@@ -176,7 +176,7 @@ export default function Home(props) {
             <ul className={styles.list}>
               <li>
                 <span style={{ marginRight: '10px' }}>🧑</span>
-                28 years old
+                29 years old
               </li>
               <li>
                 <span style={{ marginRight: '10px' }}>🇻🇳</span>
@@ -219,7 +219,7 @@ export default function Home(props) {
                   <span style={{ marginRight: '10px' }}>📸</span>
                   <a href="https://xnapper.com">Xnapper</a>
                 </div>
-                <div className={styles.subtitle}>Now beta testing!</div>
+                <div className={styles.subtitle}>Released recently!</div>
               </li>
             </ul>
             <h2>Code</h2>
@@ -248,6 +248,7 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>{props.tweets}</div>
               </li>
+              {/*
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>⌨️</span>
@@ -255,6 +256,7 @@ export default function Home(props) {
                 </div>
                 <div className={styles.subtitle}>Stream on weekends</div>
               </li>
+              */}
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>🖼️</span>
