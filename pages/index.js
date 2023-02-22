@@ -402,58 +402,62 @@ export default function Home(props) {
 }
 
 export async function getStaticProps() {
-  const parser = new Parser();
-  const [devutils, blackmagic, newsletter, youtube, tweets] = await Promise.all(
-    [
-      parser.parseURL('https://devutils.app/changelog.rss'),
-      parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
-      parser.parseURL('https://news.tonydinh.com/feed'),
-      parser.parseURL(
-        'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
-      ),
-      fetch(
-        'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
-      ).then((r) => r.json()),
-    ]
-  );
+  try {
+    const parser = new Parser();
+    const [devutils, blackmagic, newsletter, youtube, tweets] =
+      await Promise.all([
+        parser.parseURL('https://devutils.app/changelog.rss'),
+        null, // parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
+        parser.parseURL('https://news.tonydinh.com/feed'),
+        parser.parseURL(
+          'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
+        ),
+        fetch(
+          'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
+        ).then((r) => r.json()),
+      ]);
 
-  return {
-    props: {
-      devutils: `Last version: ${fromNow(new Date(devutils.items[0].isoDate))}`,
-      blackmagic: `Last update: ${fromNow(
-        new Date(blackmagic.items[0].isoDate)
-      )}`,
-      newsletter: `Last issue: ${fromNow(
-        new Date(newsletter.items[0].isoDate)
-      )}`,
-      youtube: `Last video: ${fromNow(new Date(youtube.items[0].isoDate))}`,
-      tweets: `${tweets.count} tweets last 48hrs`,
-      latest: [
-        ...devutils.items.map((item) => ({
-          ...item,
-          source: 'DevUtils Product Updates',
-          color: '#5ba533',
-        })),
-        ...blackmagic.items.map((item) => ({
-          ...item,
-          source: `BlackMagic.so Product Updates`,
-          color: '#333333',
-        })),
-        ...newsletter.items.map((item) => ({
-          ...item,
-          source: `Tony Dinh's Newsletter`,
-          color: '#5383ec',
-        })),
-        ...youtube.items.map((item) => ({
-          ...item,
-          source: `Tony Dinh's Youtube Channel`,
-          color: '#ea3323',
-        })),
-      ].sort(
-        (a, b) => new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime()
-      ),
-    },
-  };
+    return {
+      props: {
+        devutils: `Last version: ${fromNow(
+          new Date(devutils.items[0].isoDate)
+        )}`,
+        blackmagic: `Last update: last week`,
+        newsletter: `Last issue: ${fromNow(
+          new Date(newsletter.items[0].isoDate)
+        )}`,
+        youtube: `Last video: ${fromNow(new Date(youtube.items[0].isoDate))}`,
+        tweets: `${tweets.count} tweets last 48hrs`,
+        latest: [
+          ...devutils.items.map((item) => ({
+            ...item,
+            source: 'DevUtils Product Updates',
+            color: '#5ba533',
+          })),
+          // ...blackmagic.items.map((item) => ({
+          //   ...item,
+          //   source: `BlackMagic.so Product Updates`,
+          //   color: '#333333',
+          // })),
+          ...newsletter.items.map((item) => ({
+            ...item,
+            source: `Tony Dinh's Newsletter`,
+            color: '#5383ec',
+          })),
+          ...youtube.items.map((item) => ({
+            ...item,
+            source: `Tony Dinh's Youtube Channel`,
+            color: '#ea3323',
+          })),
+        ].sort(
+          (a, b) =>
+            new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime()
+        ),
+      },
+    };
+  } catch (e) {
+    console.error(e);
+  }
 }
 
 function fromNow(
