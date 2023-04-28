@@ -121,6 +121,15 @@ export default function Home(props) {
               ),
             },
             {
+              link: 'https://typingmind.com',
+              title: (
+                <span>
+                  <span style={{ marginRight: 10 }}>🧠</span> Typing Mind
+                  (Better UI for ChatGPT)
+                </span>
+              ),
+            },
+            {
               link: 'https://devutils.app',
               title: (
                 <span>
@@ -200,6 +209,13 @@ export default function Home(props) {
           <section>
             <h2>My Products</h2>
             <ul className={styles.list}>
+              <li>
+                <div>
+                  <span style={{ marginRight: '10px' }}>🧠</span>
+                  <a href="https://www.typingmind.com">TypingMind.com</a>
+                </div>
+                <div className={styles.subtitle}>A better UI for ChatGPT!</div>
+              </li>
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>🧰</span>
