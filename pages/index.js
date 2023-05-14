@@ -157,7 +157,7 @@ export default function Home(props) {
               ),
             },
             {
-              link: 'https://notes.tonydinh.com/',
+              link: 'https://tdinh.notion.site/Tony-s-Notes-d1db498a88a9454abcc014fdd7a73f0c',
               title: (
                 <span>
                   <span style={{ marginRight: 10 }}>✏️</span> Micro-blog (FAQs,
@@ -309,7 +309,9 @@ export default function Home(props) {
               <li>
                 <div>
                   <span style={{ marginRight: '10px' }}>✏️</span>
-                  <a href="https://notes.tonydinh.com">Public Notes</a>
+                  <a href="https://tdinh.notion.site/Tony-s-Notes-d1db498a88a9454abcc014fdd7a73f0c">
+                    Public Notes
+                  </a>
                 </div>
                 <div className={styles.subtitle}>Notes, tips, and FAQs</div>
               </li>
