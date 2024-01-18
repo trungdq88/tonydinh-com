@@ -185,7 +185,7 @@ export default function Home(props) {
             <ul className={styles.list}>
               <li>
                 <span style={{ marginRight: '10px' }}>🧑</span>
-                29 years old
+                30 years old
               </li>
               <li>
                 <span style={{ marginRight: '10px' }}>🇻🇳</span>
@@ -401,8 +401,17 @@ export default function Home(props) {
         body {
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+          font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            Segoe UI,
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            Fira Sans,
+            Droid Sans,
+            Helvetica Neue,
             sans-serif;
         }
 
@@ -428,21 +437,21 @@ export async function getStaticProps() {
         null, // parser.parseURL('https://newsletter.blackmagic.so/?format=rss'),
         parser.parseURL('https://news.tonydinh.com/feed'),
         parser.parseURL(
-          'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg'
+          'https://www.youtube.com/feeds/videos.xml?channel_id=UCYOiXua3ot8x7D9uF7ipUPg',
         ),
         fetch(
-          'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561'
+          'https://api.blackmagic.so/get_tweets_last_24hrs?id=331379561',
         ).then((r) => r.json()),
       ]);
 
     return {
       props: {
         devutils: `Last version: ${fromNow(
-          new Date(devutils.items[0].isoDate)
+          new Date(devutils.items[0].isoDate),
         )}`,
         blackmagic: `Last update: last week`,
         newsletter: `Last issue: ${fromNow(
-          new Date(newsletter.items[0].isoDate)
+          new Date(newsletter.items[0].isoDate),
         )}`,
         youtube: `Last video: ${fromNow(new Date(youtube.items[0].isoDate))}`,
         tweets: `${tweets.count} tweets last 48hrs`,
@@ -469,7 +478,7 @@ export async function getStaticProps() {
           })),
         ].sort(
           (a, b) =>
-            new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime()
+            new Date(b.isoDate).getTime() - new Date(a.isoDate).getTime(),
         ),
       },
     };
@@ -481,7 +490,7 @@ export async function getStaticProps() {
 function fromNow(
   date,
   nowDate = Date.now(),
-  rft = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' })
+  rft = new Intl.RelativeTimeFormat(undefined, { numeric: 'auto' }),
 ) {
   const SECOND = 1000;
   const MINUTE = 60 * SECOND;
