@@ -139,37 +139,19 @@ export default function Home(props) {
               ),
             },
             {
-              link: 'https://blackmagic.so',
-              title: (
-                <span>
-                  <span style={{ marginRight: 10 }}>✨</span> Black Magic
-                  (Twitter SaaS)
-                </span>
-              ),
-            },
-            {
-              link: 'https://xnapper.com',
-              title: (
-                <span>
-                  <span style={{ marginRight: 10 }}>📸</span> Beautiful
-                  screenshots (macOS app)
-                </span>
-              ),
-            },
-            {
-              link: 'https://tdinh.notion.site/Tony-s-Notes-d1db498a88a9454abcc014fdd7a73f0c',
-              title: (
-                <span>
-                  <span style={{ marginRight: 10 }}>✏️</span> Micro-blog (FAQs,
-                  Notes)
-                </span>
-              ),
-            },
-            {
               link: 'https://twitter.com/tdinh_me',
               title: (
                 <span>
                   <span style={{ marginRight: 10 }}>❤️</span> Find me on Twitter
+                </span>
+              ),
+            },
+            {
+              link: 'https://tonydinh.ai',
+              title: (
+                <span>
+                  <span style={{ marginRight: 10 }}>🤖</span>
+                  Chat with my AI clone
                 </span>
               ),
             },
